@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/julia/Downloads/index_3.html -->
+<!-- saved from url=(0051)file:///C:/Users/julia/Downloads/index_5.html#about -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,14 @@
     --blue-border: rgba(96,165,250,0.2);
   }
 
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+  /* Belt and suspenders: every in-page anchor target gets a scroll margin */
+  #residential, #business, #about, #contact {
+    scroll-margin-top: 80px;
+  }
   body {
     background: var(--black);
     color: var(--white);
@@ -697,12 +704,12 @@
 
 <!-- NAV -->
 <nav>
-  <a href="file:///C:/Users/julia/Downloads/index_3.html#" class="wordmark">W<span class="zero">0</span>LFE</a>
+  <a href="file:///C:/Users/julia/Downloads/index_5.html#" class="wordmark">W<span class="zero">0</span>LFE</a>
   <div class="nav-links" id="navLinks">
-    <a href="file:///C:/Users/julia/Downloads/index_3.html#residential" data-nav-link="">Home</a>
-    <a href="file:///C:/Users/julia/Downloads/index_3.html#business" data-nav-link="">Business</a>
-    <a href="file:///C:/Users/julia/Downloads/index_3.html#about" data-nav-link="">About</a>
-    <a href="file:///C:/Users/julia/Downloads/index_3.html#contact" class="nav-cta" onclick="openModal(event)">Get Help Now</a>
+    <a href="file:///C:/Users/julia/Downloads/index_5.html#residential" onclick="closeNav()">Home</a>
+    <a href="file:///C:/Users/julia/Downloads/index_5.html#business" onclick="closeNav()">Business</a>
+    <a href="file:///C:/Users/julia/Downloads/index_5.html#about" onclick="closeNav()">About</a>
+    <a href="file:///C:/Users/julia/Downloads/index_5.html#contact" class="nav-cta" onclick="openModal(event)">Get Help Now</a>
   </div>
   <button class="nav-hamburger" id="navHamburger" onclick="toggleNav()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -726,84 +733,84 @@
 
 <!-- TRUST BAR -->
 <div class="trust-bar">
-  <div class="trust-item reveal">🎓 <span>CS — <strong>APU, LBCC &amp; Cal Poly</strong></span></div>
-  <div class="trust-item reveal">⏱️ <span><strong>15+ Years</strong> Experience</span></div>
-  <div class="trust-item reveal">🔧 <span><strong>PC Builder</strong> &amp; Coder</span></div>
-  <div class="trust-item reveal">📍 <span><strong>Los Angeles</strong> Based</span></div>
-  <div class="trust-item reveal">💻 <span><strong>In-Person</strong> or Remote</span></div>
+  <div class="trust-item reveal visible">🎓 <span>CS — <strong>APU, LBCC &amp; Cal Poly</strong></span></div>
+  <div class="trust-item reveal visible">⏱️ <span><strong>15+ Years</strong> Experience</span></div>
+  <div class="trust-item reveal visible">🔧 <span><strong>PC Builder</strong> &amp; Coder</span></div>
+  <div class="trust-item reveal visible">📍 <span><strong>Los Angeles</strong> Based</span></div>
+  <div class="trust-item reveal visible">💻 <span><strong>In-Person</strong> or Remote</span></div>
 </div>
 
 <!-- SERVICES -->
-<section id="residential">
+<section id="residential" style="scroll-margin-top: 80px;">
   <div class="section-inner">
 
-    <p class="section-tag reveal">Services</p>
-    <h2 class="reveal">What I Fix</h2>
-    <p class="section-desc reveal">From slow PCs to full business setups — honest flat rates, no surprise fees, way below what the big stores charge.</p>
+    <p class="section-tag reveal visible">Services</p>
+    <h2 class="reveal visible">What I Fix</h2>
+    <p class="section-desc reveal visible">From slow PCs to full business setups — honest flat rates, no surprise fees, way below what the big stores charge.</p>
 
     <!-- HOME -->
-    <div class="audience-divider reveal">
+    <div class="audience-divider reveal visible">
       <div class="audience-divider-line"></div>
       <div class="audience-label home">🏠 For Home &amp; Individuals</div>
       <div class="audience-divider-line"></div>
     </div>
 
     <div class="services-grid">
-      <div class="service-card reveal">
+      <div class="service-card reveal visible">
         <div class="service-icon">💻</div>
         <h3>PC Speed &amp; Optimization</h3>
         <p>Slow computer? I'll deep clean it, remove bloatware, fix startup issues and get it running fast again. Gaming PCs are my specialty.</p>
         <span class="service-price">From $49</span>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal visible">
         <div class="service-icon">🦠</div>
         <h3>Virus &amp; Malware Removal</h3>
         <p>Full threat removal using professional diagnostic software. Completely clean and locked down when I'm done.</p>
         <span class="service-price">From $49</span>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal visible">
         <div class="service-icon">📶</div>
         <h3>WiFi &amp; Network Fixes</h3>
         <p>Slow speeds, dead zones, devices dropping — I'll find the real cause and fix it, not just restart your router.</p>
         <span class="service-price">From $45</span>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal visible">
         <div class="service-icon">🔧</div>
         <h3>Hardware Upgrades &amp; Builds</h3>
         <p>RAM, SSD, GPU swaps or full custom PC builds. You buy the parts, I build it right. I've built my own rigs for years.</p>
         <span class="service-price">From $70</span>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal visible">
         <div class="service-icon">📺</div>
         <h3>Smart Device &amp; AV Setup</h3>
         <p>Smart TVs, projectors, speakers, streaming sticks, home assistants, surround sound — everything set up and working together.</p>
         <span class="service-price">From $42</span>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal visible">
         <div class="service-icon">🛡️</div>
         <h3>General Tech Help</h3>
         <p>Passwords, software, Windows, Mac, Linux, data backup, email — whatever's giving you trouble. If it's tech, I handle it.</p>
         <span class="service-price">From $45</span>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal visible">
         <div class="service-icon">🧰</div>
         <h3>Appliance Repair</h3>
         <p>Refrigerators, washers, dryers and more — Frigidaire, Whirlpool, Samsung and others. If you have the parts, I can fix it.</p>
         <span class="service-price">From $60</span>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal visible">
         <div class="service-icon">🎵</div>
         <h3>Music Production Setup</h3>
         <p>DAW setup, audio interface configuration, MIDI routing, studio monitor calibration — Ableton, FL Studio and more. I produce myself.</p>
         <span class="service-price">From $55</span>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal visible">
         <div class="service-icon">🎮</div>
         <h3>Pro Play &amp; Gaming Optimization</h3>
         <p>Full competitive setup optimization — drivers, in-game settings, network tweaks, polling rates, monitor calibration, Windows game mode, and more. Built for players who want every edge.</p>
         <span class="service-price">From $40</span>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal visible">
         <div class="service-icon">💬</div>
         <h3>Discord Server Setup</h3>
         <p>Full Discord server creation and configuration — channels, roles, permissions, bots, verification systems, and more. Perfect for communities, businesses, gaming teams, and creators.</p>
@@ -813,44 +820,44 @@
 
     <!-- BUSINESS -->
     <div id="business" style="scroll-margin-top: 80px;"></div>
-    <div class="audience-divider reveal">
+    <div class="audience-divider reveal visible">
       <div class="audience-divider-line"></div>
       <div class="audience-label biz">🏢 For Businesses</div>
       <div class="audience-divider-line"></div>
     </div>
 
     <div class="services-grid">
-      <div class="service-card reveal">
+      <div class="service-card reveal visible">
         <div class="service-icon blue">🖥️</div>
         <h3>POS System Setup &amp; Repair</h3>
         <p>Get your point-of-sale system installed, configured, and running correctly. I handle setup, troubleshooting, and staff walkthroughs.</p>
         <span class="service-price blue">Custom Quote</span>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal visible">
         <div class="service-icon blue">📡</div>
         <h3>Business WiFi &amp; Networks</h3>
         <p>Commercial WiFi setup, access points, network segmentation — fast and reliable for staff and customers. You have the equipment, I make it work.</p>
         <span class="service-price blue">Custom Quote</span>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal visible">
         <div class="service-icon blue">⚡</div>
         <h3>Business Automations</h3>
         <p>Automate repetitive tasks — inventory alerts, email follow-ups, appointment reminders, data sync. Save your team hours every week.</p>
         <span class="service-price blue">Custom Quote</span>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal visible">
         <div class="service-icon blue">🔒</div>
         <h3>Workstation Setup &amp; Security</h3>
         <p>New employee computers, software installs, accounts, security policies — get your team set up and protected properly.</p>
         <span class="service-price blue">Custom Quote</span>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal visible">
         <div class="service-icon blue">🖨️</div>
         <h3>Printers, Scanners &amp; Peripherals</h3>
         <p>Networked printers, scanners, receipt printers — whatever your business needs connected and working reliably.</p>
         <span class="service-price blue">Custom Quote</span>
       </div>
-      <div class="service-card reveal">
+      <div class="service-card reveal visible">
         <div class="service-icon blue">🛠️</div>
         <h3>General Business IT Support</h3>
         <p>Ongoing tech support for your business. Software issues, hardware failures, connectivity problems — fast response, local service.</p>
@@ -864,12 +871,12 @@
 <!-- HOW IT WORKS -->
 <section style="background: var(--off-black); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
   <div class="section-inner">
-    <p class="section-tag reveal">How It Works</p>
-    <h2 class="reveal">Come To You.<br>Or Online.</h2>
-    <p class="section-desc reveal">Two ways to get help — whatever works best for you.</p>
+    <p class="section-tag reveal visible">How It Works</p>
+    <h2 class="reveal visible">Come To You.<br>Or Online.</h2>
+    <p class="section-desc reveal visible">Two ways to get help — whatever works best for you.</p>
 
     <div class="modes-grid">
-      <div class="mode-card reveal">
+      <div class="mode-card reveal visible">
         <span class="mode-emoji">🚗</span>
         <h3>In-Person</h3>
         <p>I come directly to your home or business in the LA area. No dropping your device off anywhere.</p>
@@ -881,7 +888,7 @@
           <li>Home visits and business calls welcome</li>
         </ul>
       </div>
-      <div class="mode-card reveal">
+      <div class="mode-card reveal visible">
         <span class="mode-emoji">🖥️</span>
         <h3>Remote / Online</h3>
         <p>I connect securely to your device from anywhere. Best for software issues, slow PCs, viruses, and setup.</p>
@@ -901,9 +908,9 @@
 <div id="about" class="about-strip" style="scroll-margin-top: 80px;">
   <div class="about-inner">
     <div class="about-left">
-      <p class="section-tag reveal">About</p>
-      <h2 class="reveal">Real experience.<br>Not a franchise.</h2>
-      <p class="reveal">I'm not a big box store or a call center. I'm a local tech professional with a genuine passion for solving problems and helping people get the most out of their technology.</p>
+      <p class="section-tag reveal visible">About</p>
+      <h2 class="reveal visible">Real experience.<br>Not a franchise.</h2>
+      <p class="reveal visible">I'm not a big box store or a call center. I'm a local tech professional with a genuine passion for solving problems and helping people get the most out of their technology.</p>
       <p class="reveal">With a <strong>Computer Science background from APU, LBCC, and Cal Poly</strong>, I bring real knowledge to every job — not just a troubleshooting script. Over <strong>15 years of hands-on experience</strong> across hardware, software, networking, and more.</p>
       <p class="reveal">I've been into tech my whole life. I keep my prices the way they are because I remember what it felt like to need help and not be able to afford it. I started doing this out of passion, not profit. Every person I help matters to me — whether it's getting your laptop running again, setting up a business, or just answering a question. I show up, I love what I do, and we're always going to figure it out.</p>
 
@@ -1422,37 +1429,13 @@
 <script>
   // Hamburger nav toggle
   function toggleNav() {
-    const links = document.getElementById('navLinks');
-    const btn = document.getElementById('navHamburger');
-    links.classList.toggle('open');
-    btn.classList.toggle('open');
+    document.getElementById('navLinks').classList.toggle('open');
+    document.getElementById('navHamburger').classList.toggle('open');
   }
-
-  // Attach nav link handlers after DOM is ready - handles scroll manually for mobile reliability
-  document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('[data-nav-link]');
-    navLinks.forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        const href = link.getAttribute('href');
-        const target = document.querySelector(href);
-        // Close mobile menu
-        document.getElementById('navLinks').classList.remove('open');
-        document.getElementById('navHamburger').classList.remove('open');
-        // Scroll to target
-        if (target) {
-          const navHeight = document.querySelector('nav').offsetHeight || 60;
-          const rect = target.getBoundingClientRect();
-          const targetTop = rect.top + window.pageYOffset - navHeight - 10;
-          // Use requestAnimationFrame to ensure menu close repaint happens first
-          requestAnimationFrame(function() {
-            window.scrollTo({ top: targetTop, behavior: 'smooth' });
-          });
-        }
-      });
-    });
-  });
+  function closeNav() {
+    document.getElementById('navLinks').classList.remove('open');
+    document.getElementById('navHamburger').classList.remove('open');
+  }
 
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
