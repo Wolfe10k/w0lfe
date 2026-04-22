@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0048)file:///C:/Users/julia/Downloads/w0lfe_v3_3.html -->
+<!-- saved from url=(0048)file:///C:/Users/julia/Downloads/w0lfe_v3_4.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -648,12 +648,12 @@
 
 <!-- NAV -->
 <nav>
-  <a href="file:///C:/Users/julia/Downloads/w0lfe_v3_3.html#" class="wordmark">W<span class="zero">0</span>LFE</a>
+  <a href="file:///C:/Users/julia/Downloads/w0lfe_v3_4.html#" class="wordmark">W<span class="zero">0</span>LFE</a>
   <div class="nav-links">
-    <a href="file:///C:/Users/julia/Downloads/w0lfe_v3_3.html#residential">Home</a>
-    <a href="file:///C:/Users/julia/Downloads/w0lfe_v3_3.html#business">Business</a>
-    <a href="file:///C:/Users/julia/Downloads/w0lfe_v3_3.html#about">About</a>
-    <a href="file:///C:/Users/julia/Downloads/w0lfe_v3_3.html#contact" class="nav-cta">Get Help Now</a>
+    <a href="file:///C:/Users/julia/Downloads/w0lfe_v3_4.html#residential">Home</a>
+    <a href="file:///C:/Users/julia/Downloads/w0lfe_v3_4.html#business">Business</a>
+    <a href="file:///C:/Users/julia/Downloads/w0lfe_v3_4.html#about">About</a>
+    <a href="file:///C:/Users/julia/Downloads/w0lfe_v3_4.html#contact" class="nav-cta" onclick="openModal(event)">Get Help Now</a>
   </div>
 </nav>
 
@@ -978,6 +978,133 @@
   </div>
 </section>
 
+<!-- CONTACT MODAL -->
+<div id="contactModal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.85); z-index:1000; align-items:center; justify-content:center; padding:20px;">
+  <div style="background:#141414; border:1px solid #2a2a2a; border-radius:16px; padding:40px; max-width:540px; width:100%; position:relative; max-height:90vh; overflow-y:auto;">
+    
+    <!-- Close button -->
+    <button onclick="closeModal()" style="position:absolute; top:16px; right:16px; background:none; border:none; color:#888; font-size:22px; cursor:pointer; line-height:1;">×</button>
+    
+    <!-- Header -->
+    <div style="margin-bottom:28px;">
+      <p style="font-size:10px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#e8ff47; margin-bottom:8px;">Contact</p>
+      <h3 style="font-family:&#39;Bebas Neue&#39;,sans-serif; font-size:36px; letter-spacing:0.04em; color:#f2f2f2; line-height:1;">Let's figure it out.</h3>
+      <p style="color:#787878; font-size:14px; margin-top:8px;">Fill this out and I'll get back to you fast — usually within an hour.</p>
+    </div>
+
+    <form id="contactForm" onsubmit="submitForm(event)" style="display:flex; flex-direction:column; gap:16px;">
+      
+      <!-- Name -->
+      <div>
+        <label style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; display:block; margin-bottom:6px;">Your Name *</label>
+        <input type="text" name="name" required="" placeholder="First and last name" style="width:100%; background:#0f0f0f; border:1px solid #2a2a2a; border-radius:7px; padding:12px 14px; color:#f2f2f2; font-size:14px; font-family:&#39;DM Sans&#39;,sans-serif; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor=&#39;#e8ff47&#39;" onblur="this.style.borderColor=&#39;#2a2a2a&#39;">
+      </div>
+
+      <!-- Phone -->
+      <div>
+        <label style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; display:block; margin-bottom:6px;">Phone Number *</label>
+        <input type="tel" name="phone" required="" placeholder="(000) 000-0000" style="width:100%; background:#0f0f0f; border:1px solid #2a2a2a; border-radius:7px; padding:12px 14px; color:#f2f2f2; font-size:14px; font-family:&#39;DM Sans&#39;,sans-serif; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor=&#39;#e8ff47&#39;" onblur="this.style.borderColor=&#39;#2a2a2a&#39;">
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; display:block; margin-bottom:6px;">Email</label>
+        <input type="email" name="email" placeholder="your@email.com" style="width:100%; background:#0f0f0f; border:1px solid #2a2a2a; border-radius:7px; padding:12px 14px; color:#f2f2f2; font-size:14px; font-family:&#39;DM Sans&#39;,sans-serif; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor=&#39;#e8ff47&#39;" onblur="this.style.borderColor=&#39;#2a2a2a&#39;">
+      </div>
+
+      <!-- Service Type -->
+      <div>
+        <label style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; display:block; margin-bottom:6px;">Type of Service *</label>
+        <select name="service" required="" style="width:100%; background:#0f0f0f; border:1px solid #2a2a2a; border-radius:7px; padding:12px 14px; color:#f2f2f2; font-size:14px; font-family:&#39;DM Sans&#39;,sans-serif; outline:none; transition:border-color 0.2s; appearance:none;" onfocus="this.style.borderColor=&#39;#e8ff47&#39;" onblur="this.style.borderColor=&#39;#2a2a2a&#39;">
+          <option value="" disabled="" selected="" style="color:#888;">Select a service...</option>
+          <option value="pc-optimization">PC Speed &amp; Optimization</option>
+          <option value="virus-removal">Virus &amp; Malware Removal</option>
+          <option value="wifi-network">WiFi &amp; Network Issues</option>
+          <option value="hardware-build">Hardware Upgrade / PC Build</option>
+          <option value="smart-device">Smart Device Setup</option>
+          <option value="appliance">Appliance Repair</option>
+          <option value="business-pos">Business — POS System</option>
+          <option value="business-wifi">Business — WiFi &amp; Network</option>
+          <option value="business-automation">Business — Automations</option>
+          <option value="business-it">Business — General IT Support</option>
+          <option value="general">General Tech Help</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <!-- In-Person or Remote -->
+      <div>
+        <label style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; display:block; margin-bottom:6px;">How would you like help? *</label>
+        <div style="display:flex; gap:10px;">
+          <label style="flex:1; cursor:pointer;">
+            <input type="radio" name="method" value="in-person" required="" style="display:none;" onchange="selectRadio(this)">
+            <div class="radio-btn" style="background:#0f0f0f; border:1px solid #2a2a2a; border-radius:7px; padding:10px 14px; font-size:13px; color:#888; text-align:center; transition:all 0.2s;">🚗 In-Person</div>
+          </label>
+          <label style="flex:1; cursor:pointer;">
+            <input type="radio" name="method" value="remote" style="display:none;" onchange="selectRadio(this)">
+            <div class="radio-btn" style="background:#0f0f0f; border:1px solid #2a2a2a; border-radius:7px; padding:10px 14px; font-size:13px; color:#888; text-align:center; transition:all 0.2s;">🖥️ Remote</div>
+          </label>
+          <label style="flex:1; cursor:pointer;">
+            <input type="radio" name="method" value="not-sure" style="display:none;" onchange="selectRadio(this)">
+            <div class="radio-btn" style="background:#0f0f0f; border:1px solid #2a2a2a; border-radius:7px; padding:10px 14px; font-size:13px; color:#888; text-align:center; transition:all 0.2s;">🤷 Not Sure</div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Preferred Contact -->
+      <div>
+        <label style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; display:block; margin-bottom:6px;">Preferred Contact Method *</label>
+        <div style="display:flex; gap:10px;">
+          <label style="flex:1; cursor:pointer;">
+            <input type="radio" name="contact" value="text" required="" style="display:none;" onchange="selectRadio(this)">
+            <div class="radio-btn" style="background:#0f0f0f; border:1px solid #2a2a2a; border-radius:7px; padding:10px 14px; font-size:13px; color:#888; text-align:center; transition:all 0.2s;">💬 Text</div>
+          </label>
+          <label style="flex:1; cursor:pointer;">
+            <input type="radio" name="contact" value="call" style="display:none;" onchange="selectRadio(this)">
+            <div class="radio-btn" style="background:#0f0f0f; border:1px solid #2a2a2a; border-radius:7px; padding:10px 14px; font-size:13px; color:#888; text-align:center; transition:all 0.2s;">📞 Call</div>
+          </label>
+          <label style="flex:1; cursor:pointer;">
+            <input type="radio" name="contact" value="email" style="display:none;" onchange="selectRadio(this)">
+            <div class="radio-btn" style="background:#0f0f0f; border:1px solid #2a2a2a; border-radius:7px; padding:10px 14px; font-size:13px; color:#888; text-align:center; transition:all 0.2s;">✉️ Email</div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Issue Description -->
+      <div>
+        <label style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; display:block; margin-bottom:6px;">Describe the Issue *</label>
+        <textarea name="description" required="" placeholder="Tell me what&#39;s going on — the more detail the better..." rows="4" style="width:100%; background:#0f0f0f; border:1px solid #2a2a2a; border-radius:7px; padding:12px 14px; color:#f2f2f2; font-size:14px; font-family:&#39;DM Sans&#39;,sans-serif; outline:none; transition:border-color 0.2s; resize:vertical;" onfocus="this.style.borderColor=&#39;#e8ff47&#39;" onblur="this.style.borderColor=&#39;#2a2a2a&#39;"></textarea>
+      </div>
+
+      <!-- Urgency -->
+      <div>
+        <label style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; display:block; margin-bottom:6px;">How Urgent Is This?</label>
+        <select name="urgency" style="width:100%; background:#0f0f0f; border:1px solid #2a2a2a; border-radius:7px; padding:12px 14px; color:#f2f2f2; font-size:14px; font-family:&#39;DM Sans&#39;,sans-serif; outline:none; transition:border-color 0.2s; appearance:none;" onfocus="this.style.borderColor=&#39;#e8ff47&#39;" onblur="this.style.borderColor=&#39;#2a2a2a&#39;">
+          <option value="asap">ASAP — I need this fixed today</option>
+          <option value="soon" selected="">Soon — within a few days</option>
+          <option value="flexible">Flexible — whenever works</option>
+        </select>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" style="background:#e8ff47; color:#0a0a0a; padding:14px; border-radius:7px; border:none; font-weight:700; font-size:15px; cursor:pointer; font-family:&#39;DM Sans&#39;,sans-serif; letter-spacing:0.02em; transition:opacity 0.2s; margin-top:4px;" onmouseover="this.style.opacity=&#39;0.85&#39;" onmouseout="this.style.opacity=&#39;1&#39;">
+        Send Request →
+      </button>
+
+      <p style="font-size:11px; color:#555; text-align:center;">I'll respond within 1 hour during business hours.</p>
+    </form>
+
+    <!-- Success Message (hidden) -->
+    <div id="successMsg" style="display:none; text-align:center; padding:20px 0;">
+      <div style="font-size:48px; margin-bottom:16px;">✅</div>
+      <h3 style="font-family:&#39;Bebas Neue&#39;,sans-serif; font-size:32px; color:#f2f2f2; letter-spacing:0.04em; margin-bottom:8px;">Got it!</h3>
+      <p style="color:#787878; font-size:15px;">I'll reach out to you soon. Talk soon!</p>
+      <button onclick="closeModal()" style="margin-top:24px; background:#e8ff47; color:#0a0a0a; padding:12px 28px; border-radius:7px; border:none; font-weight:700; font-size:14px; cursor:pointer; font-family:&#39;DM Sans&#39;,sans-serif;">Close</button>
+    </div>
+
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="wordmark">W<span class="zero">0</span>LFE</div>
@@ -986,6 +1113,7 @@
 </footer>
 
 <script>
+  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -996,6 +1124,70 @@
     });
   }, { threshold: 0.07 });
   reveals.forEach(el => observer.observe(el));
+
+  // Modal functions
+  function openModal(e) {
+    e.preventDefault();
+    const modal = document.getElementById('contactModal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('contactModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+    document.getElementById('contactForm').style.display = 'flex';
+    document.getElementById('successMsg').style.display = 'none';
+    document.getElementById('contactForm').reset();
+    document.querySelectorAll('.radio-btn').forEach(btn => {
+      btn.style.background = '#0f0f0f';
+      btn.style.borderColor = '#2a2a2a';
+      btn.style.color = '#888';
+    });
+  }
+
+  // Close modal when clicking outside
+  document.getElementById('contactModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // Radio button styling
+  function selectRadio(input) {
+    const siblings = document.querySelectorAll(`input[name="${input.name}"]`);
+    siblings.forEach(sib => {
+      const div = sib.nextElementSibling;
+      div.style.background = '#0f0f0f';
+      div.style.borderColor = '#2a2a2a';
+      div.style.color = '#888';
+    });
+    const div = input.nextElementSibling;
+    div.style.background = 'rgba(232,255,71,0.08)';
+    div.style.borderColor = '#e8ff47';
+    div.style.color = '#e8ff47';
+  }
+
+  // Form submission — sends to Formspree
+  function submitForm(e) {
+    e.preventDefault();
+    const form = document.getElementById('contactForm');
+    const data = new FormData(form);
+
+    fetch('https://formspree.io/f/mjgjaewr', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+      } else {
+        alert('Something went wrong. Please text me directly at (909) 898-9991');
+      }
+    }).catch(() => {
+      alert('Something went wrong. Please text me directly at (909) 898-9991');
+    });
+  }
 </script>
 
 
