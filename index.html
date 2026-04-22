@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/julia/Downloads/index_2.html -->
+<!-- saved from url=(0045)file:///C:/Users/julia/Downloads/index_3.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -697,12 +697,12 @@
 
 <!-- NAV -->
 <nav>
-  <a href="file:///C:/Users/julia/Downloads/index_2.html#" class="wordmark">W<span class="zero">0</span>LFE</a>
+  <a href="file:///C:/Users/julia/Downloads/index_3.html#" class="wordmark">W<span class="zero">0</span>LFE</a>
   <div class="nav-links" id="navLinks">
-    <a href="file:///C:/Users/julia/Downloads/index_2.html#residential" onclick="closeNav(event)">Home</a>
-    <a href="file:///C:/Users/julia/Downloads/index_2.html#business" onclick="closeNav(event)">Business</a>
-    <a href="file:///C:/Users/julia/Downloads/index_2.html#about" onclick="closeNav(event)">About</a>
-    <a href="file:///C:/Users/julia/Downloads/index_2.html#contact" class="nav-cta" onclick="openModal(event)">Get Help Now</a>
+    <a href="file:///C:/Users/julia/Downloads/index_3.html#residential" data-nav-link="">Home</a>
+    <a href="file:///C:/Users/julia/Downloads/index_3.html#business" data-nav-link="">Business</a>
+    <a href="file:///C:/Users/julia/Downloads/index_3.html#about" data-nav-link="">About</a>
+    <a href="file:///C:/Users/julia/Downloads/index_3.html#contact" class="nav-cta" onclick="openModal(event)">Get Help Now</a>
   </div>
   <button class="nav-hamburger" id="navHamburger" onclick="toggleNav()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -1427,28 +1427,32 @@
     links.classList.toggle('open');
     btn.classList.toggle('open');
   }
-  function closeNav(e) {
-    const links = document.getElementById('navLinks');
-    const btn = document.getElementById('navHamburger');
-    // If a link was clicked, handle the scroll manually so it works reliably on mobile
-    if (e && e.currentTarget && e.currentTarget.getAttribute('href')) {
-      const href = e.currentTarget.getAttribute('href');
-      if (href.startsWith('#') && href.length > 1) {
+
+  // Attach nav link handlers after DOM is ready - handles scroll manually for mobile reliability
+  document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('[data-nav-link]');
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
         e.preventDefault();
-        links.classList.remove('open');
-        btn.classList.remove('open');
+        e.stopPropagation();
+        const href = link.getAttribute('href');
         const target = document.querySelector(href);
+        // Close mobile menu
+        document.getElementById('navLinks').classList.remove('open');
+        document.getElementById('navHamburger').classList.remove('open');
+        // Scroll to target
         if (target) {
-          const navHeight = document.querySelector('nav').offsetHeight;
-          const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 10;
-          window.scrollTo({ top: top, behavior: 'smooth' });
+          const navHeight = document.querySelector('nav').offsetHeight || 60;
+          const rect = target.getBoundingClientRect();
+          const targetTop = rect.top + window.pageYOffset - navHeight - 10;
+          // Use requestAnimationFrame to ensure menu close repaint happens first
+          requestAnimationFrame(function() {
+            window.scrollTo({ top: targetTop, behavior: 'smooth' });
+          });
         }
-        return;
-      }
-    }
-    links.classList.remove('open');
-    btn.classList.remove('open');
-  }
+      });
+    });
+  });
 
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
