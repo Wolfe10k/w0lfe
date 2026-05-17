@@ -1,10 +1,74 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/julia/Downloads/index_9.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>W0LFE Tech Solutions — Los Angeles</title>
-<link href="file:///C:/Users/julia/Downloads/index_files/css2" rel="stylesheet">
+<title>W0LFE Tech Solutions — Tech Repair in Los Angeles | No Fix, No Pay</title>
+<meta name="description" content="Local LA tech repair & IT support — PC speed fixes, virus removal, WiFi, gaming optimization, business IT. Honest flat pricing, in-person or remote. No fix, no pay.">
+<meta name="theme-color" content="#090909">
+<link rel="canonical" href="https://w0lfe.tech/">
+
+<!-- OpenGraph -->
+<meta property="og:title" content="W0LFE Tech Solutions — Tech Repair in Los Angeles">
+<meta property="og:description" content="Local LA tech repair & IT support — honest flat pricing, in-person or remote. No fix, no pay.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://w0lfe.tech/">
+<meta property="og:image" content="https://w0lfe.tech/og.png">
+<meta property="og:site_name" content="W0LFE Tech Solutions">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="W0LFE Tech Solutions — Tech Repair in Los Angeles">
+<meta name="twitter:description" content="Local LA tech repair & IT support — honest flat pricing, in-person or remote.">
+<meta name="twitter:image" content="https://w0lfe.tech/og.png">
+
+<!-- Favicon: inline SVG, no extra file -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23090909'/><text x='16' y='22' font-family='Impact,Bebas Neue,sans-serif' font-size='18' text-anchor='middle' letter-spacing='1' fill='%23f2f2f2'>W<tspan fill='%23e8ff47'>0</tspan></text></svg>">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+<!-- JSON-LD: LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "W0LFE Tech Solutions",
+  "image": "https://w0lfe.tech/og.png",
+  "@id": "https://w0lfe.tech/",
+  "url": "https://w0lfe.tech/",
+  "telephone": "+1-909-898-9991",
+  "email": "support@w0lfe.tech",
+  "priceRange": "$$",
+  "description": "Local LA tech repair and IT support — PC repair, virus removal, WiFi, gaming optimization, business IT, appliance repair. No fix, no pay.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Los Angeles",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Los Angeles"},
+    {"@type": "City", "name": "Inglewood"},
+    {"@type": "City", "name": "Compton"},
+    {"@type": "City", "name": "Long Beach"},
+    {"@type": "City", "name": "Hawthorne"},
+    {"@type": "City", "name": "Torrance"},
+    {"@type": "City", "name": "Culver City"}
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "09:00",
+    "closes": "20:00"
+  }],
+  "founder": {"@type": "Person", "name": "Julian Wolfe"}
+}
+</script>
+
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -42,26 +106,72 @@
     overflow-x: hidden;
   }
 
-  /* Cyber grid overlay — fixed so it covers everything, pointer-events none so it never blocks clicks */
-  body::before {
+  /* AURORA BACKDROP — two drifting yellow-green radial blobs + faint grain */
+  body::before,
+  body::after {
     content: '';
     position: fixed;
-    inset: 0;
-    z-index: 0;
     pointer-events: none;
-    background-image:
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 39px,
-        rgba(232,255,71,0.025) 40px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 39px,
-        rgba(232,255,71,0.025) 40px
-      );
+    z-index: 0;
+    will-change: transform;
+  }
+  body::before {
+    top: -25vh;
+    left: -20vw;
+    width: 90vw;
+    height: 90vw;
+    max-width: 1400px;
+    max-height: 1400px;
+    background: radial-gradient(circle at center,
+      rgba(232,255,71,0.085) 0%,
+      rgba(232,255,71,0.04) 25%,
+      transparent 60%);
+    filter: blur(40px);
+    animation: aurora1 70s ease-in-out infinite alternate;
+  }
+  body::after {
+    bottom: -30vh;
+    right: -25vw;
+    width: 95vw;
+    height: 95vw;
+    max-width: 1500px;
+    max-height: 1500px;
+    background: radial-gradient(circle at center,
+      rgba(232,255,71,0.07) 0%,
+      rgba(96,165,250,0.025) 30%,
+      transparent 65%);
+    filter: blur(50px);
+    animation: aurora2 90s ease-in-out infinite alternate;
+  }
+  /* Film grain noise overlay — inline SVG, no network request */
+  .grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.035;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  @keyframes aurora1 {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(12vw, 6vh) scale(1.1); }
+    100% { transform: translate(-8vw, 10vh) scale(0.95); }
+  }
+  @keyframes aurora2 {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(-10vw, -8vh) scale(1.08); }
+    100% { transform: translate(8vw, -4vh) scale(0.92); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    body::before, body::after { animation: none; }
+  }
+
+  /* Make sure all content sits above the aurora */
+  nav, section, footer, .trust-bar, .about-strip, #contactModal {
+    position: relative;
+    z-index: 2;
   }
 
   .wordmark {
@@ -346,13 +456,126 @@
     align-items: center;
     justify-content: center;
     font-size: 17px;
+    color: var(--accent);
     margin-bottom: 16px;
+    transition: transform 0.2s ease, background 0.2s;
   }
+  .service-card:hover .service-icon { transform: translateY(-2px); }
 
   .service-icon.blue {
     background: var(--blue-dim);
     border-color: var(--blue-border);
+    color: var(--blue);
   }
+
+  .service-icon svg { display: block; }
+
+  /* Brand pill — single class replacing 30+ inline-style blocks */
+  .brand-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .brand-pill {
+    background: var(--card);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    padding: 6px 13px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.15s;
+  }
+  .brand-pill:hover {
+    color: var(--white);
+    border-color: #444;
+    background: #181818;
+    transform: translateY(-1px);
+  }
+
+  /* Form fields — consolidated focus state, no more inline onfocus/onblur */
+  .form-field {
+    width: 100%;
+    background: #0f0f0f;
+    border: 1px solid #2a2a2a;
+    border-radius: 7px;
+    padding: 12px 14px;
+    color: #f2f2f2;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .form-field:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(232,255,71,0.08);
+  }
+  .form-field::placeholder { color: #555; }
+  .form-field--select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none' stroke='%23888' stroke-width='1.5' stroke-linecap='round'><path d='M1 1l5 5 5-5'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 10px 7px;
+    padding-right: 36px;
+  }
+  .form-field--textarea {
+    resize: vertical;
+    min-height: 100px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .form-label {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* Tighter Bebas tracking at display sizes */
+  h1, h2 { letter-spacing: 0.03em; }
+
+  /* Why card (used by testimonials + FAQ) */
+  .why-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 24px;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .why-card:hover { border-color: var(--border-light); }
+
+  /* Form submit button */
+  .form-submit {
+    background: var(--accent);
+    color: #0a0a0a;
+    padding: 14px;
+    border-radius: 7px;
+    border: none;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+    margin-top: 4px;
+    box-shadow: 0 4px 18px rgba(232,255,71,0.18);
+  }
+  .form-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+  .form-submit:active { transform: translateY(0); }
+
+  /* FAQ item */
+  .faq-item { cursor: pointer; }
+  .faq-item:hover { border-color: var(--accent-border); }
+  .faq-answer { display: none; margin-top: 12px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+  .faq-item.open .faq-answer { display: block; }
+  .faq-item .faq-toggle { color: var(--accent); font-size: 18px; transition: transform 0.2s; display: inline-block; }
+  .faq-item.open .faq-toggle { transform: rotate(45deg); }
 
   .service-card h3 {
     font-family: 'Rajdhani', sans-serif;
@@ -725,9 +948,12 @@
 </head>
 <body>
 
+<!-- Film grain overlay -->
+<div class="grain" aria-hidden="true"></div>
+
 <!-- NAV -->
 <nav>
-  <a href="file:///C:/Users/julia/Downloads/index_9.html#top" class="wordmark" onclick="scrollToSection(event,&#39;top&#39;)">W<span class="zero">0</span>LFE</a>
+  <a href="#top" class="wordmark" onclick="scrollToSection(event,&#39;top&#39;)">W<span class="zero">0</span>LFE</a>
   <div class="nav-links" id="navLinks">
     <a href="javascript:void(0)" onclick="scrollToSection(event,&#39;residential&#39;)">Home</a>
     <a href="javascript:void(0)" onclick="scrollToSection(event,&#39;business&#39;)">Business</a>
@@ -780,61 +1006,61 @@
 
     <div class="services-grid">
       <div class="service-card reveal">
-        <div class="service-icon">💻</div>
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
         <h3>PC Speed &amp; Optimization</h3>
         <p>Slow computer? I'll deep clean it, remove bloatware, fix startup issues and get it running fast again. Gaming PCs are my specialty.</p>
         <span class="service-price">From $49</span>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon">🦠</div>
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <h3>Virus &amp; Malware Removal</h3>
         <p>Full threat removal using professional diagnostic software. Completely clean and locked down when I'm done.</p>
         <span class="service-price">From $49</span>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon">📶</div>
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.82a15 15 0 0 1 20 0M5 12.55a11 11 0 0 1 14 0M8.5 16.28a6 6 0 0 1 7 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg></div>
         <h3>WiFi &amp; Network Fixes</h3>
         <p>Slow speeds, dead zones, devices dropping — I'll find the real cause and fix it, not just restart your router.</p>
         <span class="service-price">From $45</span>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon">🔧</div>
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.8-2.8 2.3-2.7z"/></svg></div>
         <h3>Hardware Upgrades &amp; Builds</h3>
         <p>RAM, SSD, GPU swaps or full custom PC builds. You buy the parts, I build it right. I've built my own rigs for years.</p>
         <span class="service-price">From $70</span>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon">📺</div>
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M17 3l-5 4-5-4"/></svg></div>
         <h3>Smart Device &amp; AV Setup</h3>
         <p>Smart TVs, projectors, speakers, streaming sticks, home assistants, surround sound — everything set up and working together.</p>
         <span class="service-price">From $42</span>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon">🛡️</div>
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V7l8-4z"/></svg></div>
         <h3>General Tech Help</h3>
         <p>Passwords, software, Windows, Mac, Linux, data backup, email — whatever's giving you trouble. If it's tech, I handle it.</p>
         <span class="service-price">From $45</span>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon">🧰</div>
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M2 13h20"/></svg></div>
         <h3>Appliance Repair</h3>
         <p>Refrigerators, washers, dryers and more — Frigidaire, Whirlpool, Samsung and others. If you have the parts, I can fix it.</p>
         <span class="service-price">From $60</span>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon">🎵</div>
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h2l2-7 4 14 4-9 3 4h5"/></svg></div>
         <h3>Music Production Setup</h3>
         <p>DAW setup, audio interface configuration, MIDI routing, studio monitor calibration — Ableton, FL Studio and more. I produce myself.</p>
         <span class="service-price">From $55</span>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon">🎮</div>
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="6"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg></div>
         <h3>Pro Play &amp; Gaming Optimization</h3>
         <p>Full competitive setup optimization — drivers, in-game settings, network tweaks, polling rates, monitor calibration, Windows game mode, and more. Built for players who want every edge.</p>
         <span class="service-price">From $40</span>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon">💬</div>
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H8l-5 4z"/></svg></div>
         <h3>Discord Server Setup</h3>
         <p>Full Discord server creation and configuration — channels, roles, permissions, bots, verification systems, and more. Perfect for communities, businesses, gaming teams, and creators.</p>
         <span class="service-price">Basic $20 — Full Setup $40</span>
@@ -851,37 +1077,37 @@
 
     <div class="services-grid">
       <div class="service-card reveal">
-        <div class="service-icon blue">🖥️</div>
+        <div class="service-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="13" rx="2"/><path d="M2 20h20M9 16v4M15 16v4"/></svg></div>
         <h3>POS System Setup &amp; Repair</h3>
         <p>Get your point-of-sale system installed, configured, and running correctly. I handle setup, troubleshooting, and staff walkthroughs.</p>
         <span class="service-price blue">Custom Quote</span>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon blue">📡</div>
+        <div class="service-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a7 7 0 0 1 14 0M8.5 12a3.5 3.5 0 0 1 7 0"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/><path d="M12 13v8M9 21h6"/></svg></div>
         <h3>Business WiFi &amp; Networks</h3>
         <p>Commercial WiFi setup, access points, network segmentation — fast and reliable for staff and customers. You have the equipment, I make it work.</p>
         <span class="service-price blue">Custom Quote</span>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon blue">⚡</div>
+        <div class="service-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 11-12h-7l1-8z"/></svg></div>
         <h3>Business Automations</h3>
         <p>Automate repetitive tasks — inventory alerts, email follow-ups, appointment reminders, data sync. Save your team hours every week.</p>
         <span class="service-price blue">Custom Quote</span>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon blue">🔒</div>
+        <div class="service-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
         <h3>Workstation Setup &amp; Security</h3>
         <p>New employee computers, software installs, accounts, security policies — get your team set up and protected properly.</p>
         <span class="service-price blue">Custom Quote</span>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon blue">🖨️</div>
+        <div class="service-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg></div>
         <h3>Printers, Scanners &amp; Peripherals</h3>
         <p>Networked printers, scanners, receipt printers — whatever your business needs connected and working reliably.</p>
         <span class="service-price blue">Custom Quote</span>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon blue">🛠️</div>
+        <div class="service-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4"/><path d="M16 8l4-4M14 6l2 2"/></svg></div>
         <h3>General Business IT Support</h3>
         <p>Ongoing tech support for your business. Software issues, hardware failures, connectivity problems — fast response, local service.</p>
         <span class="service-price blue">Retainer Available</span>
@@ -966,39 +1192,39 @@
 
       <div style="margin-top: 32px;">
         <p class="section-tag reveal">Trusted Brands I Work With</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;">
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">ASUS</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">HyperX</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Logitech</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Razer</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">MSI</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Corsair</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">NVIDIA</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">AMD</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Intel</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Samsung</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">LG</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Sony</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Apple</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Microsoft</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Netgear</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">TP-Link</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Seagate</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Western Digital</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">SanDisk</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Wooting</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Attack Shark</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Monsgeek</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">SteelSeries</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Focusrite</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Frigidaire</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Whirlpool</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Alienware</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">NZXT</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Gigabyte</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Elgato</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Rode</span>
-          <span style="background:var(--card);border:1px solid var(--border-light);border-radius:6px;padding:6px 13px;font-size:10px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color=&#39;#f2f2f2&#39;;this.style.borderColor=&#39;#444&#39;" onmouseout="this.style.color=&#39;#888&#39;;this.style.borderColor=&#39;#2a2a2a&#39;">Linux</span>
+        <div class="brand-pills">
+          <span class="brand-pill">ASUS</span>
+          <span class="brand-pill">HyperX</span>
+          <span class="brand-pill">Logitech</span>
+          <span class="brand-pill">Razer</span>
+          <span class="brand-pill">MSI</span>
+          <span class="brand-pill">Corsair</span>
+          <span class="brand-pill">NVIDIA</span>
+          <span class="brand-pill">AMD</span>
+          <span class="brand-pill">Intel</span>
+          <span class="brand-pill">Samsung</span>
+          <span class="brand-pill">LG</span>
+          <span class="brand-pill">Sony</span>
+          <span class="brand-pill">Apple</span>
+          <span class="brand-pill">Microsoft</span>
+          <span class="brand-pill">Netgear</span>
+          <span class="brand-pill">TP-Link</span>
+          <span class="brand-pill">Seagate</span>
+          <span class="brand-pill">Western Digital</span>
+          <span class="brand-pill">SanDisk</span>
+          <span class="brand-pill">Wooting</span>
+          <span class="brand-pill">Attack Shark</span>
+          <span class="brand-pill">Monsgeek</span>
+          <span class="brand-pill">SteelSeries</span>
+          <span class="brand-pill">Focusrite</span>
+          <span class="brand-pill">Frigidaire</span>
+          <span class="brand-pill">Whirlpool</span>
+          <span class="brand-pill">Alienware</span>
+          <span class="brand-pill">NZXT</span>
+          <span class="brand-pill">Gigabyte</span>
+          <span class="brand-pill">Elgato</span>
+          <span class="brand-pill">Rode</span>
+          <span class="brand-pill">Linux</span>
         </div>
       </div>
     </div>
@@ -1122,108 +1348,108 @@
 
     <div style="display: flex; flex-direction: column; gap: 12px; max-width: 800px;">
 
-      <div class="why-card reveal" style="cursor:pointer;" onclick="this.querySelector(&#39;.faq-answer&#39;).style.display=this.querySelector(&#39;.faq-answer&#39;).style.display===&#39;none&#39;?&#39;block&#39;:&#39;none&#39;">
+      <div class="why-card faq-item reveal">
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <h3 style="font-size:15px;">Do you work on Macs?</h3>
-          <span style="color:var(--accent); font-size:18px;">+</span>
+          <span class="faq-toggle">+</span>
         </div>
-        <div class="faq-answer" style="display:none; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.7;">Yes — I work on Mac, Windows, Linux and everything in between. MacOS diagnostics, software issues, performance tuning and more.</div>
+        <div class="faq-answer">Yes — I work on Mac, Windows, Linux and everything in between. MacOS diagnostics, software issues, performance tuning and more.</div>
       </div>
 
-      <div class="why-card reveal" style="cursor:pointer;" onclick="this.querySelector(&#39;.faq-answer&#39;).style.display=this.querySelector(&#39;.faq-answer&#39;).style.display===&#39;none&#39;?&#39;block&#39;:&#39;none&#39;">
+      <div class="why-card faq-item reveal">
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <h3 style="font-size:15px;">How does the No Fix No Pay guarantee work?</h3>
-          <span style="color:var(--accent); font-size:18px;">+</span>
+          <span class="faq-toggle">+</span>
         </div>
-        <div class="faq-answer" style="display:none; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.7;">Simple — if I can't solve your problem, you pay nothing. No hidden fees, no diagnostic charges, nothing. I only get paid when your issue is fully resolved.</div>
+        <div class="faq-answer">Simple — if I can't solve your problem, you pay nothing. No hidden fees, no diagnostic charges, nothing. I only get paid when your issue is fully resolved.</div>
       </div>
 
-      <div class="why-card reveal" style="cursor:pointer;" onclick="this.querySelector(&#39;.faq-answer&#39;).style.display=this.querySelector(&#39;.faq-answer&#39;).style.display===&#39;none&#39;?&#39;block&#39;:&#39;none&#39;">
+      <div class="why-card faq-item reveal">
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <h3 style="font-size:15px;">How far do you travel for in-person jobs?</h3>
-          <span style="color:var(--accent); font-size:18px;">+</span>
+          <span class="faq-toggle">+</span>
         </div>
-        <div class="faq-answer" style="display:none; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.7;">I'm based in LA and serve the greater Los Angeles area including South Central, Inglewood, Compton, Long Beach, Hawthorne, Torrance, Culver City, East LA, Downtown, Hollywood, Burbank, Pasadena and surrounding cities. For remote help I work with anyone in the US.</div>
+        <div class="faq-answer">I'm based in LA and serve the greater Los Angeles area including South Central, Inglewood, Compton, Long Beach, Hawthorne, Torrance, Culver City, East LA, Downtown, Hollywood, Burbank, Pasadena and surrounding cities. For remote help I work with anyone in the US.</div>
       </div>
 
-      <div class="why-card reveal" style="cursor:pointer;" onclick="this.querySelector(&#39;.faq-answer&#39;).style.display=this.querySelector(&#39;.faq-answer&#39;).style.display===&#39;none&#39;?&#39;block&#39;:&#39;none&#39;">
+      <div class="why-card faq-item reveal">
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <h3 style="font-size:15px;">How long does a typical repair take?</h3>
-          <span style="color:var(--accent); font-size:18px;">+</span>
+          <span class="faq-toggle">+</span>
         </div>
-        <div class="faq-answer" style="display:none; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.7;">Most software issues like virus removal, PC optimization and WiFi fixes are resolved in 1-2 hours. Hardware builds or complex business setups may take longer. I'll always give you an honest time estimate upfront.</div>
+        <div class="faq-answer">Most software issues like virus removal, PC optimization and WiFi fixes are resolved in 1-2 hours. Hardware builds or complex business setups may take longer. I'll always give you an honest time estimate upfront.</div>
       </div>
 
-      <div class="why-card reveal" style="cursor:pointer;" onclick="this.querySelector(&#39;.faq-answer&#39;).style.display=this.querySelector(&#39;.faq-answer&#39;).style.display===&#39;none&#39;?&#39;block&#39;:&#39;none&#39;">
+      <div class="why-card faq-item reveal">
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <h3 style="font-size:15px;">Do you do remote support?</h3>
-          <span style="color:var(--accent); font-size:18px;">+</span>
+          <span class="faq-toggle">+</span>
         </div>
-        <div class="faq-answer" style="display:none; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.7;">Yes — I can connect to your computer securely from anywhere in the US. You see everything I do in real time. Perfect for software issues, virus removal, slow PC fixes, and setup help.</div>
+        <div class="faq-answer">Yes — I can connect to your computer securely from anywhere in the US. You see everything I do in real time. Perfect for software issues, virus removal, slow PC fixes, and setup help.</div>
       </div>
 
-      <div class="why-card reveal" style="cursor:pointer;" onclick="this.querySelector(&#39;.faq-answer&#39;).style.display=this.querySelector(&#39;.faq-answer&#39;).style.display===&#39;none&#39;?&#39;block&#39;:&#39;none&#39;">
+      <div class="why-card faq-item reveal">
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <h3 style="font-size:15px;">What payment methods do you accept?</h3>
-          <span style="color:var(--accent); font-size:18px;">+</span>
+          <span class="faq-toggle">+</span>
         </div>
-        <div class="faq-answer" style="display:none; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.7;">Cash, Venmo, Zelle, and CashApp. Payment is only collected after the job is done and you're satisfied.</div>
+        <div class="faq-answer">Cash, Venmo, Zelle, and CashApp. Payment is only collected after the job is done and you're satisfied.</div>
       </div>
 
-      <div class="why-card reveal" style="cursor:pointer;" onclick="this.querySelector(&#39;.faq-answer&#39;).style.display=this.querySelector(&#39;.faq-answer&#39;).style.display===&#39;none&#39;?&#39;block&#39;:&#39;none&#39;">
+      <div class="why-card faq-item reveal">
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <h3 style="font-size:15px;">Do you work on gaming PCs and setups?</h3>
-          <span style="color:var(--accent); font-size:18px;">+</span>
+          <span class="faq-toggle">+</span>
         </div>
-        <div class="faq-answer" style="display:none; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.7;">Yes — I have competitive experience in CS2, Valorant, Overwatch, Rainbow Six, CoD, Mortal Kombat and more. I know exactly what settings and tweaks actually matter for competitive play. I'll optimize your drivers, Windows settings, network, polling rates, in-game configs, and monitor settings to squeeze out every possible edge.</div>
+        <div class="faq-answer">Yes — I have competitive experience in CS2, Valorant, Overwatch, Rainbow Six, CoD, Mortal Kombat and more. I know exactly what settings and tweaks actually matter for competitive play. I'll optimize your drivers, Windows settings, network, polling rates, in-game configs, and monitor settings to squeeze out every possible edge.</div>
       </div>
 
-      <div class="why-card reveal" style="cursor:pointer;" onclick="this.querySelector(&#39;.faq-answer&#39;).style.display=this.querySelector(&#39;.faq-answer&#39;).style.display===&#39;none&#39;?&#39;block&#39;:&#39;none&#39;">
+      <div class="why-card faq-item reveal">
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <h3 style="font-size:15px;">Can you help set up a music production studio?</h3>
-          <span style="color:var(--accent); font-size:18px;">+</span>
+          <span class="faq-toggle">+</span>
         </div>
-        <div class="faq-answer" style="display:none; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.7;">Yes — I produce music myself using Ableton and FL Studio. I can help set up your DAW, configure audio interfaces, route MIDI, calibrate studio monitors, and optimize your PC for low-latency audio production.</div>
+        <div class="faq-answer">Yes — I produce music myself using Ableton and FL Studio. I can help set up your DAW, configure audio interfaces, route MIDI, calibrate studio monitors, and optimize your PC for low-latency audio production.</div>
       </div>
 
-      <div class="why-card reveal" style="cursor:pointer;" onclick="this.querySelector(&#39;.faq-answer&#39;).style.display=this.querySelector(&#39;.faq-answer&#39;).style.display===&#39;none&#39;?&#39;block&#39;:&#39;none&#39;">
+      <div class="why-card faq-item reveal">
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <h3 style="font-size:15px;">Do you offer business IT support?</h3>
-          <span style="color:var(--accent); font-size:18px;">+</span>
+          <span class="faq-toggle">+</span>
         </div>
-        <div class="faq-answer" style="display:none; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.7;">Yes — POS systems, business WiFi, workstation setup, automations, and ongoing IT support. Monthly retainer packages are available for businesses that need regular support.</div>
+        <div class="faq-answer">Yes — POS systems, business WiFi, workstation setup, automations, and ongoing IT support. Monthly retainer packages are available for businesses that need regular support.</div>
       </div>
 
-      <div class="why-card reveal" style="cursor:pointer;" onclick="this.querySelector(&#39;.faq-answer&#39;).style.display=this.querySelector(&#39;.faq-answer&#39;).style.display===&#39;none&#39;?&#39;block&#39;:&#39;none&#39;">
+      <div class="why-card faq-item reveal">
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <h3 style="font-size:15px;">Can you fix my appliances?</h3>
-          <span style="color:var(--accent); font-size:18px;">+</span>
+          <span class="faq-toggle">+</span>
         </div>
-        <div class="faq-answer" style="display:none; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.7;">Yes — refrigerators, washers, dryers and more from brands like Frigidaire, Whirlpool and Samsung. You'll need to provide the parts, I provide the labor and expertise.</div>
+        <div class="faq-answer">Yes — refrigerators, washers, dryers and more from brands like Frigidaire, Whirlpool and Samsung. You'll need to provide the parts, I provide the labor and expertise.</div>
       </div>
 
-      <div class="why-card reveal" style="cursor:pointer;" onclick="this.querySelector(&#39;.faq-answer&#39;).style.display=this.querySelector(&#39;.faq-answer&#39;).style.display===&#39;none&#39;?&#39;block&#39;:&#39;none&#39;">
+      <div class="why-card faq-item reveal">
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <h3 style="font-size:15px;">Why are your prices so much lower than competitors?</h3>
-          <span style="color:var(--accent); font-size:18px;">+</span>
+          <span class="faq-toggle">+</span>
         </div>
-        <div class="faq-answer" style="display:none; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.7;">I do this because I love it, not to maximize profit. I remember what it felt like to need help and not be able to afford it. Lower prices means more people get the help they actually need — that matters more to me than charging what the market will bear.</div>
+        <div class="faq-answer">I do this because I love it, not to maximize profit. I remember what it felt like to need help and not be able to afford it. Lower prices means more people get the help they actually need — that matters more to me than charging what the market will bear.</div>
       </div>
 
-      <div class="why-card reveal" style="cursor:pointer;" onclick="this.querySelector(&#39;.faq-answer&#39;).style.display=this.querySelector(&#39;.faq-answer&#39;).style.display===&#39;none&#39;?&#39;block&#39;:&#39;none&#39;">
+      <div class="why-card faq-item reveal">
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <h3 style="font-size:15px;">Can you optimize my PC specifically for competitive gaming?</h3>
-          <span style="color:var(--accent); font-size:18px;">+</span>
+          <span class="faq-toggle">+</span>
         </div>
-        <div class="faq-answer" style="display:none; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.7;">Yes — this is one of my specialties. As a professional CS player I know exactly what settings, tweaks and configurations actually matter for competitive play. I'll optimize your drivers, Windows settings, network, polling rates, in-game configs, and monitor settings to get every possible edge.</div>
+        <div class="faq-answer">Yes — this is one of my specialties. As a professional CS player I know exactly what settings, tweaks and configurations actually matter for competitive play. I'll optimize your drivers, Windows settings, network, polling rates, in-game configs, and monitor settings to get every possible edge.</div>
       </div>
 
-      <div class="why-card reveal" style="cursor:pointer;" onclick="this.querySelector(&#39;.faq-answer&#39;).style.display=this.querySelector(&#39;.faq-answer&#39;).style.display===&#39;none&#39;?&#39;block&#39;:&#39;none&#39;">
+      <div class="why-card faq-item reveal">
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <h3 style="font-size:15px;">Can you set up a Discord server for my community or business?</h3>
-          <span style="color:var(--accent); font-size:18px;">+</span>
+          <span class="faq-toggle">+</span>
         </div>
-        <div class="faq-answer" style="display:none; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.7;">Absolutely — I can build your Discord server from scratch or clean up an existing one. Channels, roles, permissions, bots, verification, welcome messages, moderation systems — everything set up properly so your community runs smoothly.</div>
+        <div class="faq-answer">Absolutely — I can build your Discord server from scratch or clean up an existing one. Channels, roles, permissions, bots, verification, welcome messages, moderation systems — everything set up properly so your community runs smoothly.</div>
       </div>
 
     </div>
@@ -1330,26 +1556,26 @@
       
       <!-- Name -->
       <div>
-        <label style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; display:block; margin-bottom:6px;">Your Name *</label>
-        <input type="text" name="name" required="" placeholder="First and last name" style="width:100%; background:#0f0f0f; border:1px solid #2a2a2a; border-radius:7px; padding:12px 14px; color:#f2f2f2; font-size:14px; font-family:&#39;DM Sans&#39;,sans-serif; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor=&#39;#e8ff47&#39;" onblur="this.style.borderColor=&#39;#2a2a2a&#39;">
+        <label class="form-label">Your Name *</label>
+        <input type="text" name="name" required="" placeholder="First and last name" class="form-field">
       </div>
 
       <!-- Phone -->
       <div>
-        <label style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; display:block; margin-bottom:6px;">Phone Number *</label>
-        <input type="tel" name="phone" required="" placeholder="(000) 000-0000" style="width:100%; background:#0f0f0f; border:1px solid #2a2a2a; border-radius:7px; padding:12px 14px; color:#f2f2f2; font-size:14px; font-family:&#39;DM Sans&#39;,sans-serif; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor=&#39;#e8ff47&#39;" onblur="this.style.borderColor=&#39;#2a2a2a&#39;">
+        <label class="form-label">Phone Number *</label>
+        <input type="tel" name="phone" required="" placeholder="(000) 000-0000" class="form-field">
       </div>
 
       <!-- Email -->
       <div>
-        <label style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; display:block; margin-bottom:6px;">Email</label>
-        <input type="email" name="email" placeholder="your@email.com" style="width:100%; background:#0f0f0f; border:1px solid #2a2a2a; border-radius:7px; padding:12px 14px; color:#f2f2f2; font-size:14px; font-family:&#39;DM Sans&#39;,sans-serif; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor=&#39;#e8ff47&#39;" onblur="this.style.borderColor=&#39;#2a2a2a&#39;">
+        <label class="form-label">Email</label>
+        <input type="email" name="email" placeholder="your@email.com" class="form-field">
       </div>
 
       <!-- Service Type -->
       <div>
-        <label style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; display:block; margin-bottom:6px;">Type of Service *</label>
-        <select name="service" required="" style="width:100%; background:#0f0f0f; border:1px solid #2a2a2a; border-radius:7px; padding:12px 14px; color:#f2f2f2; font-size:14px; font-family:&#39;DM Sans&#39;,sans-serif; outline:none; transition:border-color 0.2s; appearance:none;" onfocus="this.style.borderColor=&#39;#e8ff47&#39;" onblur="this.style.borderColor=&#39;#2a2a2a&#39;">
+        <label class="form-label">Type of Service *</label>
+        <select name="service" required="" class="form-field form-field--select">
           <option value="" disabled="" selected="" style="color:#888;">Select a service...</option>
           <option value="pc-optimization">PC Speed &amp; Optimization</option>
           <option value="gaming-optimization">Pro Play &amp; Gaming Optimization</option>
@@ -1371,7 +1597,7 @@
 
       <!-- In-Person or Remote -->
       <div>
-        <label style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; display:block; margin-bottom:6px;">How would you like help? *</label>
+        <label class="form-label">How would you like help? *</label>
         <div style="display:flex; gap:10px;">
           <label style="flex:1; cursor:pointer;">
             <input type="radio" name="method" value="in-person" required="" style="display:none;" onchange="selectRadio(this)">
@@ -1390,7 +1616,7 @@
 
       <!-- Preferred Contact -->
       <div>
-        <label style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; display:block; margin-bottom:6px;">Preferred Contact Method *</label>
+        <label class="form-label">Preferred Contact Method *</label>
         <div style="display:flex; gap:10px;">
           <label style="flex:1; cursor:pointer;">
             <input type="radio" name="contact" value="text" required="" style="display:none;" onchange="selectRadio(this)">
@@ -1409,14 +1635,14 @@
 
       <!-- Issue Description -->
       <div>
-        <label style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; display:block; margin-bottom:6px;">Describe the Issue *</label>
-        <textarea name="description" required="" placeholder="Tell me what&#39;s going on — the more detail the better..." rows="4" style="width:100%; background:#0f0f0f; border:1px solid #2a2a2a; border-radius:7px; padding:12px 14px; color:#f2f2f2; font-size:14px; font-family:&#39;DM Sans&#39;,sans-serif; outline:none; transition:border-color 0.2s; resize:vertical;" onfocus="this.style.borderColor=&#39;#e8ff47&#39;" onblur="this.style.borderColor=&#39;#2a2a2a&#39;"></textarea>
+        <label class="form-label">Describe the Issue *</label>
+        <textarea name="description" required="" placeholder="Tell me what&#39;s going on — the more detail the better..." rows="4" class="form-field form-field--textarea"></textarea>
       </div>
 
       <!-- Urgency -->
       <div>
-        <label style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; display:block; margin-bottom:6px;">How Urgent Is This?</label>
-        <select name="urgency" style="width:100%; background:#0f0f0f; border:1px solid #2a2a2a; border-radius:7px; padding:12px 14px; color:#f2f2f2; font-size:14px; font-family:&#39;DM Sans&#39;,sans-serif; outline:none; transition:border-color 0.2s; appearance:none;" onfocus="this.style.borderColor=&#39;#e8ff47&#39;" onblur="this.style.borderColor=&#39;#2a2a2a&#39;">
+        <label class="form-label">How Urgent Is This?</label>
+        <select name="urgency" class="form-field form-field--select">
           <option value="asap">ASAP — I need this fixed today</option>
           <option value="soon" selected="">Soon — within a few days</option>
           <option value="flexible">Flexible — whenever works</option>
@@ -1424,7 +1650,7 @@
       </div>
 
       <!-- Submit -->
-      <button type="submit" style="background:#e8ff47; color:#0a0a0a; padding:14px; border-radius:7px; border:none; font-weight:700; font-size:15px; cursor:pointer; font-family:&#39;DM Sans&#39;,sans-serif; letter-spacing:0.02em; transition:opacity 0.2s; margin-top:4px;" onmouseover="this.style.opacity=&#39;0.85&#39;" onmouseout="this.style.opacity=&#39;1&#39;">
+      <button type="submit" class="form-submit">
         Send Request →
       </button>
 
@@ -1524,6 +1750,11 @@
     div.style.borderColor = '#e8ff47';
     div.style.color = '#e8ff47';
   }
+
+  // FAQ accordion (delegated)
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => item.classList.toggle('open'));
+  });
 
   // Form submission — sends to Formspree
   function submitForm(e) {
